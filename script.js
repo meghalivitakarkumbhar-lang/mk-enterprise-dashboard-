@@ -1,150 +1,72 @@
-let customers = [];
+const users = [
+    {
+        email: "superadmin@example.com",
+        password: "Demo123",
+        role: "Super Admin"
+    },
+
+    {
+        email: "admin@example.com",
+        password: "Demo456",
+        role: "Admin"
+    },
+
+    {
+        email: "assistant1@example.com",
+        password: "Demo789",
+        role: "Office Assistant 1"
+    },
+
+    {
+        email: "assistant2@example.com",
+        password: "Demo999",
+        role: "Office Assistant 2"
+    }
+];
 
 
-// LOAD DATA FROM GITHUB
+document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event) {
 
-fetch("data/customers.json")
-    .then(response => response.json())
-    .then(data => {
-
-        customers = data;
-
-        updateDashboard();
-        displayCustomers(customers);
-
-    })
-    .catch(error => {
-
-        console.error("Data loading error:", error);
-
-    });
+        event.preventDefault();
 
 
-// DASHBOARD CALCULATION
-
-function updateDashboard() {
-
-    document.getElementById("totalCustomers").innerText =
-        customers.length;
+        const email =
+            document.getElementById("email")
+            .value
+            .trim();
 
 
-    const completed = customers.filter(
-        customer => customer.status === "Completed"
-    ).length;
-
-    document.getElementById("completed").innerText =
-        completed;
+        const password =
+            document.getElementById("password")
+            .value;
 
 
-    const pending = customers.filter(
-        customer => customer.status === "Pending"
-    ).length;
-
-    document.getElementById("pending").innerText =
-        pending;
-
-
-    const totalAmount = customers.reduce(
-        (sum, customer) => sum + Number(customer.amount || 0),
-        0
-    );
-
-    document.getElementById("totalAmount").innerText =
-        "₹" + totalAmount.toLocaleString("en-IN");
-
-}
-
-
-// DISPLAY CUSTOMERS
-
-function displayCustomers(data) {
-
-    const table = document.getElementById("customerTable");
-
-    table.innerHTML = "";
-
-
-    data.forEach(customer => {
-
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-
-            <td>${customer.id}</td>
-
-            <td>
-                <strong>${customer.name}</strong>
-            </td>
-
-            <td>
-                <a href="tel:${customer.mobile}">
-                    ${customer.mobile}
-                </a>
-            </td>
-
-            <td>${customer.service}</td>
-
-            <td>
-                ₹${Number(customer.amount).toLocaleString("en-IN")}
-            </td>
-
-            <td>
-                <span class="status ${customer.status}">
-                    ${customer.status}
-                </span>
-            </td>
-
-            <td>${customer.followup}</td>
-
-            <td>${customer.remarks}</td>
-
-        `;
-
-        table.appendChild(row);
-
-    });
-
-}
-
-
-// SEARCH
-
-document.getElementById("search")
-    .addEventListener("input", function () {
-
-        const searchText = this.value.toLowerCase();
-
-        const filtered = customers.filter(customer =>
-
-            customer.name.toLowerCase().includes(searchText) ||
-
-            customer.mobile.includes(searchText)
-
+        const user = users.find(
+            u =>
+                u.email === email &&
+                u.password === password
         );
 
-        displayCustomers(filtered);
 
-    });
+        if (user) {
+
+            localStorage.setItem(
+                "loggedInUser",
+                JSON.stringify(user)
+            );
 
 
-// STATUS FILTER
-
-document.getElementById("statusFilter")
-    .addEventListener("change", function () {
-
-        const status = this.value;
-
-        if (status === "All") {
-
-            displayCustomers(customers);
+            window.location.href =
+                "dashboard.html";
 
         } else {
 
-            const filtered = customers.filter(
-                customer => customer.status === status
-            );
-
-            displayCustomers(filtered);
+            document
+                .getElementById("loginMessage")
+                .innerText =
+                "Invalid Email ID or Password";
 
         }
 
