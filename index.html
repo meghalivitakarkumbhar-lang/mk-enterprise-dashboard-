@@ -2,107 +2,87 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>M K ENTERPRISES - Dashboard</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>M K ENTERPRISES - Login</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <header>
-        <div>
-            <h1>🏢 M K ENTERPRISES</h1>
-            <p>Customer & Service Dashboard</p>
+    <div class="login-page">
+
+        <div class="login-box">
+
+            <div class="logo">
+                🏢
+            </div>
+
+            <h1>M K ENTERPRISES</h1>
+
+            <p class="subtitle">
+                CRM MANAGEMENT SYSTEM
+            </p>
+
+
+            <form id="loginForm">
+
+                <label>
+                    Email ID / User ID
+                </label>
+
+                <input
+                    type="text"
+                    id="email"
+                    placeholder="Enter Email ID"
+                    required
+                >
+
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter Password"
+                    required
+                >
+
+
+                <button type="submit">
+                    LOGIN
+                </button>
+
+
+                <p id="loginMessage"></p>
+
+            </form>
+
+
+            <div class="login-footer">
+
+                <p>
+                    M K ENTERPRISES
+                </p>
+
+                <p>
+                    Thergaon, Pune – 411033
+                </p>
+
+            </div>
+
         </div>
-    </header>
 
-    <main>
-
-        <!-- DASHBOARD CARDS -->
-
-        <section class="dashboard">
-
-            <div class="card">
-                <h3>Total Customers</h3>
-                <div id="totalCustomers">0</div>
-            </div>
-
-            <div class="card">
-                <h3>Completed</h3>
-                <div id="completed">0</div>
-            </div>
-
-            <div class="card">
-                <h3>Pending</h3>
-                <div id="pending">0</div>
-            </div>
-
-            <div class="card">
-                <h3>Total Amount</h3>
-                <div id="totalAmount">₹0</div>
-            </div>
-
-        </section>
-
-
-        <!-- SEARCH + FILTER -->
-
-        <section class="controls">
-
-            <input
-                type="text"
-                id="search"
-                placeholder="🔍 Search customer name or mobile..."
-            >
-
-            <select id="statusFilter">
-
-                <option value="All">All Status</option>
-                <option value="Completed">Completed</option>
-                <option value="Pending">Pending</option>
-
-            </select>
-
-        </section>
-
-
-        <!-- CUSTOMER TABLE -->
-
-        <section class="table-container">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>ID</th>
-                        <th>Customer Name</th>
-                        <th>Mobile</th>
-                        <th>Service</th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                        <th>Follow-up</th>
-                        <th>Remarks</th>
-                    </tr>
-
-                </thead>
-
-                <tbody id="customerTable">
-                </tbody>
-
-            </table>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-        © 2026 M K ENTERPRISES | Thergaon, Pune
-    </footer>
+    </div>
 
 
     <script src="script.js"></script>
