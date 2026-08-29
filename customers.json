@@ -1,1 +1,22 @@
-
+[
+  {
+    "id": 1,
+    "name": "Customer Name",
+    "mobile": "9359362679",
+    "service": "Domicile Certificate",
+    "amount": 500,
+    "status": "Completed",
+    "followup": "2026-08-30",
+    "remarks": "Document submitted"
+  },
+  {
+    "id": 2,
+    "name": "ABC Customer",
+    "mobile": "9876543210",
+    "service": "Documentation",
+    "amount": 300,
+    "status": "Pending",
+    "followup": "2026-09-01",
+    "remarks": "Waiting for document"
+  }
+]
