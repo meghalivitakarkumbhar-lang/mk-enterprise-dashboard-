@@ -1,174 +1,193 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    color: #222;
-}
-
-header {
-    background: #123c73;
-    color: white;
-    padding: 25px 40px;
-}
-
-header h1 {
-    margin: 0;
-}
-
-header p {
-    margin: 5px 0 0;
-}
-
-main {
-    max-width: 1300px;
-    margin: auto;
-    padding: 30px;
+    background: #f1f4f9;
 }
 
 
-/* DASHBOARD */
+/* LOGIN PAGE */
 
-.dashboard {
-    display: grid;
-    grid-template-columns:
-        repeat(4, 1fr);
+.login-page {
+    min-height: 100vh;
 
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow:
-        0 3px 12px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-    margin-top: 0;
-    color: #666;
-}
-
-.card div {
-    font-size: 30px;
-    font-weight: bold;
-    color: #123c73;
-}
-
-
-/* CONTROLS */
-
-.controls {
-    margin: 30px 0;
     display: flex;
-    gap: 15px;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #123c73,
+        #1769aa
+    );
 }
 
-.controls input,
-.controls select {
-    padding: 13px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 15px;
-}
 
-.controls input {
-    width: 350px;
-}
+/* LOGIN BOX */
 
-
-/* TABLE */
-
-.table-container {
-    background: white;
-    border-radius: 12px;
-    overflow-x: auto;
-}
-
-table {
+.login-box {
     width: 100%;
-    border-collapse: collapse;
+
+    max-width: 430px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
+
+    text-align: center;
 }
 
-th {
-    background: #123c73;
-    color: white;
-    padding: 14px;
+
+/* LOGO */
+
+.logo {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+
+.login-box h1 {
+    color: #123c73;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+
+.subtitle {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+
+    letter-spacing: 1px;
+}
+
+
+/* FORM */
+
+form {
     text-align: left;
 }
 
-td {
-    padding: 13px;
-    border-bottom: 1px solid #eee;
+
+label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #333;
 }
 
-td a {
-    color: #1769aa;
-    text-decoration: none;
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
 }
 
 
-/* STATUS */
-
-.status {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
+input:focus {
+    border-color: #1769aa;
 }
 
-.status.Completed {
-    background: #dff5e5;
-    color: #16803c;
+
+/* LOGIN BUTTON */
+
+button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #123c73;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
 }
 
-.status.Pending {
-    background: #fff0d5;
-    color: #b36b00;
+
+button:hover {
+    background: #1769aa;
+}
+
+
+/* MESSAGE */
+
+#loginMessage {
+    text-align: center;
+
+    margin-top: 15px;
+
+    color: #d00000;
+
+    font-size: 14px;
 }
 
 
 /* FOOTER */
 
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background: #123c73;
-    color: white;
+.login-footer {
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #eee;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.7;
 }
 
 
 /* MOBILE */
 
-@media(max-width: 800px) {
-
-    .dashboard {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
 @media(max-width: 500px) {
 
-    .dashboard {
-        grid-template-columns: 1fr;
+    .login-box {
+        padding: 30px 20px;
     }
 
-    main {
-        padding: 15px;
-    }
-
-    .controls {
-        flex-direction: column;
-    }
-
-    .controls input {
-        width: 100%;
+    .login-box h1 {
+        font-size: 25px;
     }
 
 }
