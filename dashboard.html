@@ -1,275 +1,448 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>M K ENTERPRISES - Dashboard</title>
+<title>M K ENTERPRISES - Dashboard</title>
 
-    <style>
+<style>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            color: #222;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
 
 
-        /* HEADER */
+/* HEADER */
 
-        header {
-            background: #123c73;
-            color: white;
-            padding: 18px 30px;
+header {
+    background: #123c73;
+    color: white;
+    padding: 18px 30px;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        header h1 {
-            font-size: 24px;
-        }
+header h1 {
+    font-size: 24px;
+}
 
-        header p {
-            font-size: 13px;
-            margin-top: 4px;
-        }
+header p {
+    font-size: 13px;
+    margin-top: 4px;
+}
 
-        .logout-btn {
-            background: white;
-            color: #123c73;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 7px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+.logout-btn {
+    background: white;
+    color: #123c73;
 
+    border: none;
 
-        /* LAYOUT */
+    padding: 10px 18px;
 
-        .layout {
-            display: flex;
-            min-height: calc(100vh - 80px);
-        }
+    border-radius: 7px;
 
+    cursor: pointer;
 
-        /* SIDEBAR */
+    font-weight: bold;
+}
 
-        .sidebar {
-            width: 240px;
-            background: white;
-            padding: 25px 15px;
-            box-shadow: 2px 0 10px rgba(0,0,0,0.08);
-        }
 
-        .profile {
-            text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 20px;
-        }
+/* LAYOUT */
 
-        .profile-icon {
-            font-size: 45px;
-        }
+.layout {
+    display: flex;
+    min-height: calc(100vh - 80px);
+}
 
-        .profile h3 {
-            color: #123c73;
-            margin-top: 8px;
-        }
 
-        .profile p {
-            color: #777;
-            font-size: 13px;
-            margin-top: 4px;
-        }
+/* SIDEBAR */
 
+.sidebar {
+    width: 240px;
+    background: white;
 
-        /* MENU */
+    padding: 25px 15px;
 
-        .menu button {
-            width: 100%;
-            padding: 13px 15px;
-            margin-bottom: 8px;
+    box-shadow:
+        2px 0 10px rgba(0,0,0,0.08);
+}
 
-            border: none;
-            background: transparent;
+.profile {
+    text-align: center;
 
-            text-align: left;
+    padding-bottom: 25px;
 
-            border-radius: 7px;
+    border-bottom: 1px solid #eee;
 
-            cursor: pointer;
+    margin-bottom: 20px;
+}
 
-            font-size: 15px;
-        }
+.profile-icon {
+    font-size: 45px;
+}
 
-        .menu button:hover {
-            background: #eaf1fb;
-            color: #123c73;
-        }
+.profile h3 {
+    color: #123c73;
 
+    margin-top: 8px;
 
-        /* CONTENT */
+    word-break: break-word;
+}
 
-        .content {
-            flex: 1;
-            padding: 30px;
-        }
+.profile p {
+    color: #777;
 
-        .welcome {
-            margin-bottom: 25px;
-        }
+    font-size: 13px;
 
-        .welcome h2 {
-            color: #123c73;
-        }
+    margin-top: 4px;
+}
 
-        .welcome p {
-            color: #777;
-            margin-top: 5px;
-        }
 
+/* MENU */
 
-        /* CARDS */
+.menu button {
+    width: 100%;
 
-        .cards {
-            display: grid;
+    padding: 13px 15px;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+    margin-bottom: 8px;
 
-            gap: 20px;
-        }
+    border: none;
 
-        .card {
-            background: white;
-            padding: 25px;
+    background: transparent;
 
-            border-radius: 12px;
+    text-align: left;
 
-            box-shadow:
-                0 3px 12px rgba(0,0,0,0.08);
-        }
+    border-radius: 7px;
 
-        .card h3 {
-            color: #777;
-            font-size: 15px;
-        }
+    cursor: pointer;
 
-        .number {
-            font-size: 32px;
-            font-weight: bold;
-            color: #123c73;
-            margin-top: 10px;
-        }
+    font-size: 15px;
+}
 
+.menu button:hover {
+    background: #eaf1fb;
 
-        /* QUICK ACTIONS */
+    color: #123c73;
+}
 
-        .section {
-            background: white;
-            margin-top: 30px;
-            padding: 25px;
-            border-radius: 12px;
 
-            box-shadow:
-                0 3px 12px rgba(0,0,0,0.08);
-        }
+/* CONTENT */
 
-        .section h2 {
-            color: #123c73;
-            margin-bottom: 20px;
-        }
+.content {
+    flex: 1;
 
-        .actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
+    padding: 30px;
+}
 
-        .action-btn {
-            padding: 14px 22px;
-            border: none;
-            border-radius: 8px;
-            background: #123c73;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
+.welcome {
+    margin-bottom: 25px;
+}
 
-        .action-btn:hover {
-            background: #1769aa;
-        }
+.welcome h2 {
+    color: #123c73;
+}
 
+.welcome p {
+    color: #777;
 
-        /* FOOTER */
+    margin-top: 5px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #777;
-            font-size: 13px;
-        }
 
+/* CARDS */
 
-        /* MOBILE */
+.cards {
+    display: grid;
 
-        @media(max-width: 900px) {
+    grid-template-columns:
+        repeat(4, 1fr);
 
-            .cards {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
+    gap: 20px;
+}
 
-            .sidebar {
-                width: 200px;
-            }
+.card {
+    background: white;
 
-        }
+    padding: 25px;
 
+    border-radius: 12px;
 
-        @media(max-width: 600px) {
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.08);
+}
 
-            header {
-                padding: 15px;
-            }
+.card h3 {
+    color: #777;
 
-            header h1 {
-                font-size: 18px;
-            }
+    font-size: 15px;
+}
 
-            .layout {
-                flex-direction: column;
-            }
+.number {
+    font-size: 32px;
 
-            .sidebar {
-                width: 100%;
-            }
+    font-weight: bold;
 
-            .cards {
-                grid-template-columns: 1fr;
-            }
+    color: #123c73;
 
-            .content {
-                padding: 20px 15px;
-            }
+    margin-top: 10px;
+}
 
-        }
 
-    </style>
+/* SECTION */
+
+.section {
+    background: white;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    color: #123c73;
+
+    margin-bottom: 20px;
+}
+
+
+/* QUICK ACTIONS */
+
+.actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.action-btn {
+    padding: 14px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #123c73;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.action-btn:hover {
+    background: #1769aa;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 999;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,0.55);
+
+    overflow-y: auto;
+
+    padding: 30px 15px;
+}
+
+.modal-box {
+    background: white;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+}
+
+.modal-box h2 {
+    color: #123c73;
+
+    margin-bottom: 20px;
+}
+
+.close {
+    position: absolute;
+
+    right: 20px;
+
+    top: 10px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #777;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+.form-group textarea {
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+.save-btn {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 5px;
+
+    background: #123c73;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: #1769aa;
+}
+
+#saveMessage {
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 20px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media(max-width: 900px) {
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -285,12 +458,9 @@
 
         <h1>🏢 M K ENTERPRISES</h1>
 
-        <p>
-            CRM Management System
-        </p>
+        <p>CRM Management System</p>
 
     </div>
-
 
     <button
         class="logout-btn"
@@ -304,230 +474,444 @@
 
 
 
-<!-- MAIN LAYOUT -->
+<!-- LAYOUT -->
 
 <div class="layout">
 
 
-    <!-- SIDEBAR -->
+<!-- SIDEBAR -->
 
-    <aside class="sidebar">
+<aside class="sidebar">
+
+    <div class="profile">
+
+        <div class="profile-icon">
+            👤
+        </div>
+
+        <h3 id="userName">
+            User
+        </h3>
+
+        <p id="userRole">
+            Role
+        </p>
+
+    </div>
 
 
-        <div class="profile">
+    <div class="menu">
 
-            <div class="profile-icon">
-                👤
-            </div>
+        <button>
+            📊 Dashboard
+        </button>
 
-            <h3 id="userName">
-                User
+        <button>
+            👥 Customers
+        </button>
+
+        <button>
+            📞 Call Register
+        </button>
+
+        <button>
+            📅 Follow-ups
+        </button>
+
+        <button>
+            💰 Payments
+        </button>
+
+        <button>
+            📄 Documents
+        </button>
+
+        <button>
+            📈 Reports
+        </button>
+
+        <button id="usersMenu">
+            👤 User Management
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+<!-- MAIN -->
+
+<main class="content">
+
+
+    <div class="welcome">
+
+        <h2>
+            Welcome to M K ENTERPRISES
+        </h2>
+
+        <p id="welcomeText">
+            CRM Dashboard
+        </p>
+
+    </div>
+
+
+
+    <!-- DASHBOARD CARDS -->
+
+    <section class="cards">
+
+
+        <div class="card">
+
+            <h3>
+                Total Customers
             </h3>
 
-            <p id="userRole">
-                Role
-            </p>
+            <div
+                class="number"
+                id="totalCustomers">
+
+                0
+
+            </div>
 
         </div>
 
 
-        <div class="menu">
+        <div class="card">
 
-            <button>
-                📊 Dashboard
-            </button>
+            <h3>
+                Today's Follow-ups
+            </h3>
 
-            <button>
-                👥 Customers
-            </button>
+            <div
+                class="number"
+                id="todayFollowups">
 
-            <button>
-                📞 Call Register
-            </button>
+                0
 
-            <button>
-                📅 Follow-ups
-            </button>
-
-            <button>
-                💰 Payments
-            </button>
-
-            <button>
-                📄 Documents
-            </button>
-
-            <button>
-                📈 Reports
-            </button>
-
-            <button id="usersMenu">
-                👤 User Management
-            </button>
+            </div>
 
         </div>
 
 
-    </aside>
+        <div class="card">
 
+            <h3>
+                Pending
+            </h3>
 
+            <div
+                class="number"
+                id="pending">
 
-    <!-- CONTENT -->
+                0
 
-    <main class="content">
-
-
-        <div class="welcome">
-
-            <h2>
-                Welcome to M K ENTERPRISES
-            </h2>
-
-            <p id="welcomeText">
-                CRM Dashboard
-            </p>
+            </div>
 
         </div>
 
 
+        <div class="card">
 
-        <!-- DASHBOARD CARDS -->
+            <h3>
+                Completed
+            </h3>
 
-        <section class="cards">
+            <div
+                class="number"
+                id="completed">
+
+                0
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-            <div class="card">
 
-                <h3>
-                    Total Customers
-                </h3>
+    <!-- QUICK ACTIONS -->
 
-                <div
-                    class="number"
-                    id="totalCustomers">
+    <section class="section">
 
-                    0
+        <h2>
+            Quick Actions
+        </h2>
 
-                </div>
+
+        <div class="actions">
+
+            <button
+                class="action-btn"
+                onclick="openCustomerForm()">
+
+                ➕ Add Customer
+
+            </button>
+
+
+            <button
+                class="action-btn">
+
+                📞 New Call
+
+            </button>
+
+
+            <button
+                class="action-btn">
+
+                📅 Add Follow-up
+
+            </button>
+
+
+            <button
+                class="action-btn">
+
+                💰 Add Payment
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RECENT ACTIVITY -->
+
+    <section class="section">
+
+        <h2>
+            Recent Activity
+        </h2>
+
+        <p>
+            Customer activity will appear here.
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 M K ENTERPRISES |
+        Thergaon, Pune – 411033
+
+    </footer>
+
+
+</main>
+
+</div>
+
+
+
+<!-- ADD CUSTOMER MODAL -->
+
+<div
+    id="customerModal"
+    class="modal">
+
+
+    <div class="modal-box">
+
+
+        <span
+            class="close"
+            onclick="closeCustomerForm()">
+
+            ×
+
+        </span>
+
+
+        <h2>
+            ➕ Add Customer
+        </h2>
+
+
+        <form id="customerForm">
+
+
+            <div class="form-group">
+
+                <label>
+                    Customer Name *
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    required>
 
             </div>
 
 
+            <div class="form-group">
 
-            <div class="card">
+                <label>
+                    Mobile *
+                </label>
 
-                <h3>
-                    Today's Follow-ups
-                </h3>
-
-                <div
-                    class="number"
-                    id="todayFollowups">
-
-                    0
-
-                </div>
+                <input
+                    type="tel"
+                    id="mobile"
+                    required>
 
             </div>
 
 
+            <div class="form-group">
 
-            <div class="card">
+                <label>
+                    Area
+                </label>
 
-                <h3>
-                    Pending
-                </h3>
-
-                <div
-                    class="number"
-                    id="pending">
-
-                    0
-
-                </div>
+                <input
+                    type="text"
+                    id="area">
 
             </div>
 
 
+            <div class="form-group">
 
-            <div class="card">
+                <label>
+                    Service *
+                </label>
 
-                <h3>
-                    Completed
-                </h3>
-
-                <div
-                    class="number"
-                    id="completed">
-
-                    0
-
-                </div>
+                <input
+                    type="text"
+                    id="service"
+                    required>
 
             </div>
 
 
-        </section>
+            <div class="form-group">
 
+                <label>
+                    Query
+                </label>
 
-
-        <!-- QUICK ACTIONS -->
-
-        <section class="section">
-
-            <h2>
-                Quick Actions
-            </h2>
-
-
-            <div class="actions">
-
-                <button class="action-btn">
-                    ➕ Add Customer
-                </button>
-
-                <button class="action-btn">
-                    📞 New Call
-                </button>
-
-                <button class="action-btn">
-                    📅 Add Follow-up
-                </button>
-
-                <button class="action-btn">
-                    💰 Add Payment
-                </button>
+                <input
+                    type="text"
+                    id="query">
 
             </div>
 
-        </section>
+
+            <div class="form-group">
+
+                <label>
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    min="0">
+
+            </div>
 
 
+            <div class="form-group">
 
-        <!-- RECENT ACTIVITY -->
+                <label>
+                    Assigned To
+                </label>
 
-        <section class="section">
+                <select id="assigned">
 
-            <h2>
-                Recent Activity
-            </h2>
+                    <option value="Meghali">
+                        Meghali
+                    </option>
 
-            <p>
-                No recent activity available.
-            </p>
+                    <option value="Khandu">
+                        Khandu
+                    </option>
 
-        </section>
+                    <option value="Vrushali">
+                        Vrushali
+                    </option>
+
+                    <option value="Tejal">
+                        Tejal
+                    </option>
+
+                </select>
+
+            </div>
 
 
-        <footer>
+            <div class="form-group">
 
-            © 2026 M K ENTERPRISES |
-            Thergaon, Pune – 411033
+                <label>
+                    Status
+                </label>
 
-        </footer>
+                <select id="status">
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
 
 
-    </main>
+            <div class="form-group">
+
+                <label>
+                    Follow-up Date
+                </label>
+
+                <input
+                    type="date"
+                    id="followup">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Remarks
+                </label>
+
+                <textarea
+                    id="remarks"></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="save-btn">
+
+                💾 Save Customer
+
+            </button>
+
+
+            <p id="saveMessage"></p>
+
+
+        </form>
+
+    </div>
 
 </div>
 
@@ -536,74 +920,267 @@
 <script>
 
 
-    /* CHECK LOGIN */
+/* =========================
+   GOOGLE SHEET WEB APP URL
+   ========================= */
 
-    const loggedInUser =
-        localStorage.getItem("loggedInUser");
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbwDmbjqBuQbrW9ID0JKm9MRtTIMu9NOjpJhqgOYtEwTudH_FigpUx7Kr4ZsPq31_DDeQA/exec";
 
 
-    if (!loggedInUser) {
 
-        window.location.href =
-            "index.html";
+/* =========================
+   LOGIN CHECK
+   ========================= */
+
+const loggedInUser =
+    localStorage.getItem("loggedInUser");
+
+
+if (!loggedInUser) {
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+if (loggedInUser) {
+
+    const user =
+        JSON.parse(loggedInUser);
+
+
+    document.getElementById(
+        "userName"
+    ).innerText =
+        user.email;
+
+
+    document.getElementById(
+        "userRole"
+    ).innerText =
+        user.role;
+
+
+    document.getElementById(
+        "welcomeText"
+    ).innerText =
+        "Logged in as " + user.role;
+
+
+    /* USER MANAGEMENT */
+
+    if (user.role !== "Super Admin") {
+
+        document.getElementById(
+            "usersMenu"
+        ).style.display = "none";
 
     }
 
-
-    /* USER INFORMATION */
-
-    if (loggedInUser) {
-
-        const user =
-            JSON.parse(loggedInUser);
+}
 
 
-        document.getElementById(
-            "userName"
-        ).innerText =
-            user.email;
+
+/* =========================
+   LOGOUT
+   ========================= */
+
+function logout() {
+
+    localStorage.removeItem(
+        "loggedInUser"
+    );
+
+    window.location.href =
+        "index.html";
+
+}
 
 
-        document.getElementById(
-            "userRole"
-        ).innerText =
-            user.role;
+
+/* =========================
+   OPEN FORM
+   ========================= */
+
+function openCustomerForm() {
+
+    document.getElementById(
+        "customerModal"
+    ).style.display =
+        "block";
+
+}
 
 
-        document.getElementById(
-            "welcomeText"
-        ).innerText =
-            "Logged in as " + user.role;
+
+/* =========================
+   CLOSE FORM
+   ========================= */
+
+function closeCustomerForm() {
+
+    document.getElementById(
+        "customerModal"
+    ).style.display =
+        "none";
+
+}
 
 
-        /*
-        USER MANAGEMENT ONLY
-        FOR SUPER ADMIN
-        */
 
-        if (user.role !== "Super Admin") {
+/* =========================
+   SAVE CUSTOMER
+   ========================= */
 
+document.getElementById(
+    "customerForm"
+).addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const customer = {
+
+            customerName:
+                document.getElementById(
+                    "customerName"
+                ).value,
+
+            mobile:
+                document.getElementById(
+                    "mobile"
+                ).value,
+
+            area:
+                document.getElementById(
+                    "area"
+                ).value,
+
+            service:
+                document.getElementById(
+                    "service"
+                ).value,
+
+            query:
+                document.getElementById(
+                    "query"
+                ).value,
+
+            amount:
+                document.getElementById(
+                    "amount"
+                ).value,
+
+            assigned:
+                document.getElementById(
+                    "assigned"
+                ).value,
+
+            status:
+                document.getElementById(
+                    "status"
+                ).value,
+
+            followup:
+                document.getElementById(
+                    "followup"
+                ).value,
+
+            remarks:
+                document.getElementById(
+                    "remarks"
+                ).value
+
+        };
+
+
+        const message =
             document.getElementById(
-                "usersMenu"
-            ).style.display = "none";
+                "saveMessage"
+            );
+
+
+        message.innerText =
+            "Saving...";
+
+
+        fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+
+                method: "POST",
+
+                body:
+                    JSON.stringify(customer)
+
+            }
+        )
+
+        .then(response =>
+            response.json()
+        )
+
+        .then(result => {
+
+
+            if (result.success) {
+
+                message.innerText =
+                    "✅ Customer saved successfully!";
+
+
+                document.getElementById(
+                    "customerForm"
+                ).reset();
+
+
+            } else {
+
+                message.innerText =
+                    "❌ Error: " +
+                    result.error;
+
+            }
+
+        })
+
+        .catch(error => {
+
+            console.error(error);
+
+            message.innerText =
+                "❌ Connection error. Please try again.";
+
+        });
+
+    }
+);
+
+
+/* =========================
+   CLOSE MODAL ON OUTSIDE CLICK
+   ========================= */
+
+window.onclick =
+    function(event) {
+
+        const modal =
+            document.getElementById(
+                "customerModal"
+            );
+
+
+        if (event.target === modal) {
+
+            closeCustomerForm();
 
         }
 
-    }
-
-
-    /* LOGOUT */
-
-    function logout() {
-
-        localStorage.removeItem(
-            "loggedInUser"
-        );
-
-        window.location.href =
-            "index.html";
-
-    }
+    };
 
 
 </script>
@@ -612,3 +1189,4 @@
 </body>
 
 </html>
+```
